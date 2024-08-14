@@ -19,10 +19,10 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false,
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
       "@src/*": [
-        "src/*"
+        "./*"
       ]
     }
   }

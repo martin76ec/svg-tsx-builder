@@ -1,21 +1,12 @@
-import { parseArgs } from "util";
+import { program } from "commander";
 
 export function getArgs() {
-  const { values } = parseArgs({
-    args: Bun.argv,
-    options: {
-      inputDir: {
-        type: "string",
-      },
-      outputDir: {
-        type: "string",
-      },
-    },
-    strict: true,
-  });
+  program
+    .argument("<inputdir>", "directory with svg files")
+    .argument("<outputdir>", "directory where the generated .tsx files will be at")
+    .parse(process.argv);
 
-  if (!values.inputDir) throw new Error("input directoy is required");
-  if (!values.outputDir) throw new Error("output directoy is required");
+  const [inputDir, outputDir] = program.args;
 
-  return { inputDir: values.inputDir, outputDir: values.outputDir };
+  return { inputDir, outputDir };
 }

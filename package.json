@@ -1,8 +1,13 @@
 {
+  "bin": "src/index.ts",
   "name": "svg-tsx-builder",
   "module": "src/index.ts",
-  "version": "0.0.2",
+  "main": "src/index.ts",
+  "version": "0.0.4",
   "type": "module",
+  "scripts": {
+    "start": "bun run ./src/index.ts"
+  },
   "devDependencies": {
     "@dword-design/eslint-plugin-import-alias": "^5.0.0",
     "@eslint/js": "^9.7.0",
@@ -25,9 +30,6 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@clack/prompts": "^0.7.0",
-    "clack": "^0.1.0",
-    "prettier-eslint": "^16.3.0",
-    "prettier-eslint-cli": "^8.0.1"
+    "commander": "^12.1.0"
   }
 }
